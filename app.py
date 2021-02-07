@@ -12,6 +12,7 @@ import zipfile, urllib.request, shutil
 import dash_bootstrap_components as dbc
 import os
 import psycopg2
+import json
 
 ########### Define your variables
 mytitle='Tourist Receipt Prediction'
@@ -77,7 +78,7 @@ def update_result():
 
 	response_scoring = requests.post('https://jp-tok.ml.cloud.ibm.com/ml/v4/deployments/796d6827-8ef1-4ea9-a30b-ce162e70dc66/predictions?version=2021-02-07', json=payload_scoring, headers={'Authorization': 'Bearer ' + mltoken})
 	#print("Scoring response")
-	return "Prediction result: "+response_scoring.json()
+	return "Prediction result: "+json.loads(response_scoring.json())
 	 
 
 

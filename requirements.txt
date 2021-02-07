@@ -29,3 +29,4 @@ Werkzeug==0.15.4
 requests
 dash_bootstrap_components
 psycopg2-binary
+scipy

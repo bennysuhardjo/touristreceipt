@@ -106,7 +106,7 @@ def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,inpu
 
 	
 	
-	return "Prediction result: "+ str(prediction_outputDF_mod.iloc[0]['Val'][0][0])
+	return "Prediction result: "+ str(inv_boxcox(prediction_outputDF_mod.iloc[0]['Val'][0][0],-0.7881123572908839))
 	 
 
 

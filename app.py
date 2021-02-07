@@ -84,7 +84,18 @@ def update_result(x):
 	str1 = " " 
 	str1.join(map(str, response_scoring.json()['predictions'][0]['values']))      
 	
-	return "Prediction result: "+ str1
+	prediction_output = response_scoring.json()
+	json_data = []
+
+	for i in prediction_output['predictions']: 
+    		json_data.append( [i['values']])
+
+	prediction_outputDF = pd.DataFrame.from_records( json_data )
+	prediction_outputDF_mod = prediction_outputDF.rename(columns={0: "Val"})
+
+	
+	
+	return "Prediction result: "+ prediction_outputDF_mod.iloc[0]['Val']
 	 
 
 

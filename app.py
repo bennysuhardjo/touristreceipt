@@ -79,7 +79,7 @@ def update_result(x):
 	response_scoring = requests.post('https://jp-tok.ml.cloud.ibm.com/ml/v4/deployments/796d6827-8ef1-4ea9-a30b-ce162e70dc66/predictions?version=2021-02-07', json=payload_scoring, headers={'Authorization': 'Bearer ' + mltoken})
 	#print("Scoring response")
 	str1 = " " 
-	str1.join(response_scoring.json()['predictions'][0]['values'])
+	str1.join(map(str, response_scoring.json()['predictions'][0]['values']))      
 	
 	return "Prediction result: "+ str1
 	 

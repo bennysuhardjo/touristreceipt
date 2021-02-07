@@ -54,7 +54,7 @@ app.layout = html.Div([
 		html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='Terminal 1', type='text'))]) ,
 		html.Tr([html.Td(['Length of Stay (Days)']), html.Td(dcc.Input(id='length_of_stay', value='2', type='number'))]) ,
 		html.Tr([html.Td(['Travel Type']), html.Td(dcc.Input(id='travel_type', value='Packaged', type='text'))]) ,
-		html.Tr([html.Td(' ')]) 
+		html.Tr([html.Td(' ')]) ,
                 html.Tr([html.Td(id='result')]) 
             ])
             

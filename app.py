@@ -48,7 +48,7 @@ app.layout = html.Div([
 		html.Tr([html.Td(['City of Origin: ']), html.Td(dcc.Input(id='city_of_origin', value='January', type='text')')]) ,
 		    html.Tr([html.Td(['Purpose of Visit: ']), html.Td(dcc.Input(id='purpose_of_visit', value='January', type='text'))]) ,
 		    html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='January', type='text'))]) ,
-		    html.Tr([html.Td(['sd']), html.Td(dcc.Input(id='input-x', value='January', type='text'))]) ,
+		    html.Tr([html.Td(['sd']), html.Td(dcc.Input(id='input_x', value='January', type='text'))]) ,
 		    html.Tr([html.Td(['dsf']), html.Td(dcc.Input(id='dsf', value='January', type='text'))]) 
                 html.Tr([html.Td(['']), html.Td(id='result')]) 
             ])
@@ -71,11 +71,11 @@ app.layout = html.Div([
     Input('city_of_origin', 'value'),
     Input('purpose_of_visit', 'value'),
     Input('travel_thru', 'value'),
-    Input('input-x', 'value'),
+    Input('input_x', 'value'),
     Input('dsf', 'value')]
 )
 
-def update_result(a,b,c,d,e,f):
+def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,input_x,dsf):
     	# NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account.
 	API_KEY = "KvRBi07e0ypCaGrSLk5H7X5dU7RY4l1SpkyUAaU_atPv"
 	token_response = requests.post('https://iam.au-syd.bluemix.net/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})

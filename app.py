@@ -61,7 +61,7 @@ app.layout = html.Div([
     [Input('input-x', 'value')]
 )
 
-def update_result():
+def update_result(x):
     	# NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account.
 	API_KEY = "KvRBi07e0ypCaGrSLk5H7X5dU7RY4l1SpkyUAaU_atPv"
 	token_response = requests.post('https://iam.au-syd.bluemix.net/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})

@@ -119,7 +119,7 @@ def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,leng
 
 	
 	
-	return "Prediction result: $"+ str(round(inv_boxcox(prediction_outputDF_mod.iloc[0]['Val'][0][0],-0.7881123572908839),0))
+	return "Tourist Receipt (Shopping) Prediction: $"+ str(round(inv_boxcox(prediction_outputDF_mod.iloc[0]['Val'][0][0],-0.7881123572908839),0))
 	 
 
 

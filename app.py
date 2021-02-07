@@ -42,7 +42,7 @@ app.layout = html.Div([
 #	    html.Label('City of Origin: '), dcc.Input(id='city_of_origin', value='January', type='text'),
 #	    html.Label('Purpose of Visit: '), dcc.Input(id='purpose_of_visit', value='January', type='text'),
 #	    html.Label('Travel thru: '), dcc.Input(id='travel_thru', value='January', type='text'),
-	    html.Div(id='result'),
+#	    html.Div(id='result'),
 	    html.Table([
                 html.Tr([html.Td(['']), html.Td(id='result')]) 
             ])

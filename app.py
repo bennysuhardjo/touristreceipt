@@ -25,15 +25,18 @@ server = app.server
 app.title=tabtitle
 
 
-import requests
-
-
 
 ########### Set up the layout
 app.layout = html.Div([
     dcc.Tabs([
         dcc.Tab(label='Indonesian Market', children=[
-#            html.Label('Please enter the tourist profile: '),
+            html.Label('Please enter the tourist profile: '),
+	    dcc.Input(
+        	id='input-x',
+        	placeholder='Insert x value',
+        	type='number',
+        	value='',
+    	    ),	
 #	    html.Label('Arrival Month: '), dcc.Input(id='arrival_month', value='January', type='text'),
 #	    html.Label('City of Origin: '), dcc.Input(id='city_of_origin', value='January', type='text'),
 #	    html.Label('Purpose of Visit: '), dcc.Input(id='purpose_of_visit', value='January', type='text'),
@@ -53,7 +56,8 @@ app.layout = html.Div([
 ])
 
 @app.callback(
-    Output('result', 'children')
+    Output('result', 'children'),
+    [Input('input-x', 'value')]
 )
 
 def update_result():

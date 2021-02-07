@@ -49,7 +49,7 @@ app.layout = html.Div([
 		    html.Tr([html.Td(['Purpose of Visit: ']), html.Td(dcc.Input(id='purpose_of_visit', value='January', type='text'))]) ,
 		    html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='January', type='text'))]) ,
 		    html.Tr([html.Td(['sd']), html.Td(dcc.Input(id='input_x', value='January', type='text'))]) ,
-		    html.Tr([html.Td(['dsf']), html.Td(dcc.Input(id='dsf', value='January', type='text'))]) 
+		    html.Tr([html.Td(['dsf']), html.Td(dcc.Input(id='dsf', value='January', type='text'))]) ,
                 html.Tr([html.Td(['']), html.Td(id='result')]) 
             ])
             

@@ -40,18 +40,18 @@ app.layout = html.Div([
 #        	value='',
 #    	    ),	
 #	    html.Label('Arrival Month: '), dcc.Input(id='arrival_month', value='January', type='text'),
-#	    html.Label('City of Origin: '), dcc.Input(id='city_of_origin', value='January', type='text'),
-#	    html.Label('Purpose of Visit: '), dcc.Input(id='purpose_of_visit', value='January', type='text'),
-#	    html.Label('Travel thru: '), dcc.Input(id='travel_thru', value='January', type='text'),
+#	    html.Label('City of Origin: '), dcc.Input(id='city_of_origin', value='Batam', type='text'),
+#	    html.Label('Purpose of Visit: '), dcc.Input(id='purpose_of_visit', value='Leisure', type='text'),
+#	    html.Label('Travel thru: '), dcc.Input(id='travel_thru', value='Terminal 1', type='text'),
 #	    html.Div(id='result'),
 	    html.Table([
 		html.Tr([html.Td(['Arrival Month: ']), html.Td(dcc.Input(id='arrival_month', value='January', type='text'))]) ,
-		html.Tr([html.Td(['City of Origin: ']), html.Td(dcc.Input(id='city_of_origin', value='January', type='text'))]) ,
-		    html.Tr([html.Td(['Purpose of Visit: ']), html.Td(dcc.Input(id='purpose_of_visit', value='January', type='text'))]) ,
-		    html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='January', type='text'))]) ,
-		    html.Tr([html.Td(['sd']), html.Td(dcc.Input(id='input_x', value='January', type='text'))]) ,
-		    html.Tr([html.Td(['dsf']), html.Td(dcc.Input(id='dsf', value='January', type='text'))]) ,
-                html.Tr([html.Td(['']), html.Td(id='result')]) 
+		html.Tr([html.Td(['City of Origin: ']), html.Td(dcc.Input(id='city_of_origin', value='Batam', type='text'))]) ,
+		    html.Tr([html.Td(['Purpose of Visit: ']), html.Td(dcc.Input(id='purpose_of_visit', value='Leisure', type='text'))]) ,
+		    html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='Terminal 1', type='text'))]) ,
+		    html.Tr([html.Td(['Length of Stay']), html.Td(dcc.Input(id='length_of_stay', value='2 days', type='text'))]) ,
+		    html.Tr([html.Td(['Travel Type']), html.Td(dcc.Input(id='travel_type', value='Packaged', type='text'))]) ,
+                html.Tr([html.Td(id='result')]) 
             ])
             
        ]),
@@ -72,11 +72,11 @@ app.layout = html.Div([
     Input('city_of_origin', 'value'),
     Input('purpose_of_visit', 'value'),
     Input('travel_thru', 'value'),
-    Input('input_x', 'value'),
-    Input('dsf', 'value')]
+    Input('length_of_stay', 'value'),
+    Input('travel_type', 'value')]
 )
 
-def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,input_x,dsf):
+def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,length_of_stay,travel_type):
     	# NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account.
 	API_KEY = "KvRBi07e0ypCaGrSLk5H7X5dU7RY4l1SpkyUAaU_atPv"
 	token_response = requests.post('https://iam.au-syd.bluemix.net/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
@@ -107,7 +107,7 @@ def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,inpu
 
 	
 	
-	return "Prediction result: "+ str(inv_boxcox(prediction_outputDF_mod.iloc[0]['Val'][0][0],-0.7881123572908839))
+	return "Prediction result: $"+ str(round(inv_boxcox(prediction_outputDF_mod.iloc[0]['Val'][0][0],-0.7881123572908839),0))
 	 
 
 

@@ -45,7 +45,7 @@ app.layout = html.Div([
 #	    html.Div(id='result'),
 	    html.Table([
 		html.Tr([html.Td(['Arrival Month: ']), html.Td(dcc.Input(id='arrival_month', value='January', type='text'))]) ,
-		html.Tr([html.Td(['City of Origin: ']), html.Td(dcc.Input(id='city_of_origin', value='January', type='text')')]) ,
+		html.Tr([html.Td(['City of Origin: ']), html.Td(dcc.Input(id='city_of_origin', value='January', type='text'))]) ,
 		    html.Tr([html.Td(['Purpose of Visit: ']), html.Td(dcc.Input(id='purpose_of_visit', value='January', type='text'))]) ,
 		    html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='January', type='text'))]) ,
 		    html.Tr([html.Td(['sd']), html.Td(dcc.Input(id='input_x', value='January', type='text'))]) ,

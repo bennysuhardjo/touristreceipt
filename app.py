@@ -95,7 +95,7 @@ def update_result(x):
 
 	
 	
-	return "Prediction result: "+ prediction_outputDF_mod.iloc[0]['Val'][0][0]
+	return "Prediction result: "+ str(prediction_outputDF_mod.iloc[0]['Val'][0][0])
 	 
 
 

@@ -14,8 +14,10 @@ import os
 import psycopg2
 from scipy.special import inv_boxcox
 from sklearn.preprocessing import StandardScaler
+from pickle import load
 
-stdSc = StandardScaler()
+# load the scaler
+scaler = load(open('scalerUsed.pkl', 'rb'))
 
 
 ########### Define your variables

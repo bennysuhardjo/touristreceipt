@@ -31,3 +31,4 @@ dash_bootstrap_components
 psycopg2-binary
 scipy
 sklearn
+pickle

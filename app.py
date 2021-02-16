@@ -151,12 +151,12 @@ def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,leng
 	else: 
 		arrivalSeptember = 0
 		
-	if (city_of_origin == "Jakarta"): 
+	if (trim(city_of_origin) == "Jakarta"): 
 		cityJakarta = 1
 	else:
 		cityJakarta = 0	
 		
-	if (city_of_origin == "Batam"): 
+	if (trim(city_of_origin) == "Batam"): 
 		cityBatam = 1
 	else:
 		cityBatam = 0	

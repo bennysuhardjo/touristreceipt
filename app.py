@@ -52,7 +52,15 @@ app.layout = html.Div([
 #	    html.Div(id='result'),
 	    html.Table([
 		html.Tr([html.Td(['Arrival Month: ']), html.Td(dcc.Input(id='arrival_month', value='August', type='text'))]) ,
-		html.Tr([html.Td(['City of Origin: ']), html.Td(dcc.Input(id='city_of_origin', value='Batam', type='text'))]) ,
+		html.Tr([html.Td(['City of Origin: ']), html.Td(dcc.Dropdown(
+        							options=[
+            								{'label': 'Jakarta', 'value': 'Jakarta'},
+            								{'label': 'Batam', 'value': 'Batam'},
+            								{'label': 'Padang', 'value': 'Padang'}
+        								],
+        							value='Jakarta',
+								id='city_of_origin'
+    		))]) ,
 		html.Tr([html.Td(['Purpose of Visit: ']), html.Td(dcc.Input(id='purpose_of_visit', value='Leisure', type='text'))]) ,
 		html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='TMFT', type='text'))]) ,
 		html.Tr([html.Td(['Length of Stay (Days):']), html.Td(dcc.Input(id='length_of_stay', value='2', type='number'))]) ,
@@ -194,7 +202,7 @@ def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,leng
 
 	
 	
-	return "Tourist Receipt (Shopping) Prediction: $"+ city_of_origin + "$"+ str(round(np.expm1(prediction_outputDF_mod.iloc[0]['Val'][0][0]),0))
+	return "Tourist Receipt (Shopping) Prediction: $"+ str(round(np.expm1(prediction_outputDF_mod.iloc[0]['Val'][0][0]),0))
 	 
 
 

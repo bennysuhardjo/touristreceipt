@@ -30,5 +30,5 @@ requests
 dash_bootstrap_components
 psycopg2-binary
 scipy
-sklearn
+sklearn=0.23.1
 

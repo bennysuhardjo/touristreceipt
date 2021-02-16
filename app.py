@@ -51,7 +51,24 @@ app.layout = html.Div([
 #	    html.Label('Travel thru: '), dcc.Input(id='travel_thru', value='Terminal 1', type='text'),
 #	    html.Div(id='result'),
 	    html.Table([
-		html.Tr([html.Td(['Arrival Month: ']), html.Td(dcc.Input(id='arrival_month', value='August', type='text'))]) ,
+		html.Tr([html.Td(['Arrival Month: ']), html.Td(dcc.Dropdown(
+        							options=[
+            								{'label': 'January', 'value': 'January'},
+            								{'label': 'February', 'value': 'February'},
+									{'label': 'March', 'value': 'March'},
+									{'label': 'April', 'value': 'April'},
+									{'label': 'May', 'value': 'May'},
+									{'label': 'June', 'value': 'June'},
+									{'label': 'July', 'value': 'July'},
+									{'label': 'August', 'value': 'August'},
+									{'label': 'September', 'value': 'September'},
+									{'label': 'October', 'value': 'October'},
+									{'label': 'November', 'value': 'November'},
+            								{'label': 'December', 'value': 'December'}
+        								],
+        							value='August',
+								id='arrival_month'
+    		))]) ,
 		html.Tr([html.Td(['City of Origin: ']), html.Td(dcc.Dropdown(
         							options=[
             								{'label': 'Jakarta', 'value': 'Jakarta'},

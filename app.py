@@ -151,12 +151,12 @@ def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,leng
 	else: 
 		arrivalSeptember = 0
 		
-	if (str(city_of_origin) == "Jakarta"): 
+	if (city_of_origin == "Jakarta"): 
 		cityJakarta = 1
 	else:
 		cityJakarta = 0	
 		
-	if (str(city_of_origin) == "Batam"): 
+	if (city_of_origin == "Batam"): 
 		cityBatam = 1
 	else:
 		cityBatam = 0	
@@ -168,7 +168,7 @@ def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,leng
 	df1.loc[:, ['length_stay']] = scaler.transform(df1.loc[:, ['length_stay']])   
 	
 
-	input_values = [1.0,0.0,0.0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0]
+	input_values = [1.0,0.0,0.0,arrivalApril,arrivalAugust,arrivalDecember,arrivalFebruary,arrivalJanuary,arrivalJuly,arrivalJune,arrivalMarch,arrivalMay,arrivalNovember,arrivalOctober,arrivalSeptember,0,0,0,0,0,0,cityBatam,0,0,0,0,0,0,0,0,0,cityJakarta,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0]
 	input_values.insert(0, float(df1.iloc[:, 0][0]))
 	
 	# NOTE: manually define and pass the array(s) of values to be scored in the next line

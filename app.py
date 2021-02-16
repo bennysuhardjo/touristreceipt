@@ -15,6 +15,7 @@ import psycopg2
 from scipy.special import inv_boxcox
 from sklearn.preprocessing import StandardScaler
 from pickle import load
+import numpy as np
 
 # load the scaler
 scaler = load(open('scalerUsed.pkl', 'rb'))

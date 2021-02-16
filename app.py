@@ -89,7 +89,7 @@ app.layout = html.Div([
         							value='Leisure',
 								id='purpose_of_visit'
     		))]) ,
-		html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='TMFT', type='text'))]) ,
+		html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='Terminal 1', type='text'))]) ,
 		html.Tr([html.Td(['Length of Stay (Days):']), html.Td(dcc.Input(id='length_of_stay', value='2', type='number'))]) ,
 		html.Tr([html.Td(['1st Visit:']), html.Td(dcc.Dropdown(
         							options=[

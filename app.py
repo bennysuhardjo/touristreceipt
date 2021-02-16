@@ -87,7 +87,7 @@ app.layout = html.Div([
             								{'label': 'Others', 'value': 'Others/ Refused'}
         								],
         							value='Leisure',
-								id='purposegrp'
+								id='purpose_of_visit'
     		))]) ,
 		html.Tr([html.Td(['Travel thru: ']), html.Td(dcc.Input(id='travel_thru', value='TMFT', type='text'))]) ,
 		html.Tr([html.Td(['Length of Stay (Days):']), html.Td(dcc.Input(id='length_of_stay', value='2', type='number'))]) ,
@@ -138,8 +138,7 @@ app.layout = html.Div([
     [Input('arrival_month', 'value'),
     Input('city_of_origin', 'value'),
     Input('purpose_of_visit', 'value'),
-    Input('purposegrp', 'value'), 
-     
+
     Input('travel_thru', 'value'),
     Input('length_of_stay', 'value'),
     Input('first_visit', 'value'),
@@ -148,7 +147,7 @@ app.layout = html.Div([
     Input('travel_type', 'value')]
 )
 
-def update_result(arrival_month,city_of_origin,purpose_of_visit,purposegrp,travel_thru,length_of_stay,first_visit,main_accommodation,travel_type):
+def update_result(arrival_month,city_of_origin,purpose_of_visit,travel_thru,length_of_stay,first_visit,main_accommodation,travel_type):
     	# NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account.
 	API_KEY = "KvRBi07e0ypCaGrSLk5H7X5dU7RY4l1SpkyUAaU_atPv"
 	token_response = requests.post('https://iam.au-syd.bluemix.net/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
@@ -271,27 +270,27 @@ def update_result(arrival_month,city_of_origin,purpose_of_visit,purposegrp,trave
 	else:
 		mainaccomrelative = 0	
 	
-	if (purposegrp == "Business+Accompanying Pax"): 
+	if (purpose_of_visit == "Business+Accompanying Pax"): 
 		purposegrpbiz = 1
 	else:
 		purposegrpbiz = 0
 		
-	if (purposegrp == "Education+Accompanying Pax"): 
+	if (purpose_of_visit == "Education+Accompanying Pax"): 
 		purposegrpedu = 1
 	else:
 		purposegrpedu = 0
 		
-	if (purposegrp == "Healthcare+Accompanying Pax"): 
+	if (purpose_of_visit == "Healthcare+Accompanying Pax"): 
 		purposegrpmed = 1
 	else:
 		purposegrpmed = 0		
 		
-	if (purposegrp == "Leisure"): 
+	if (purpose_of_visit == "Leisure"): 
 		purposegrplei = 1
 	else:
 		purposegrplei = 0	
 		
-	if (purposegrp == "Others/ Refused"): 
+	if (purpose_of_visit == "Others/ Refused"): 
 		purposegrpoth = 1
 	else:
 		purposegrpoth = 0	

@@ -130,8 +130,16 @@ app.layout = html.Div([
 		html.Tr([html.Td('    ')]) ,
                 html.Tr([html.Td(id='result')])  
             ]),
-       	    html.Label('<i>This is a sample application that STB Marketing Team would use to develop targeted campaigns to boost tourism from Indonesia once the travelling restrictions are lifted or relaxed. This application will access a machine learning model trained using data from Kaggle (https://www.kaggle.com/shweta2407/singapore-tourism-data). The model is hosted on IBM Watson Machine Learning and accessed thru an API.</i>')     
-       ]),
+       	    html.Label('This is a sample application that STB Marketing Team would use to develop targeted campaigns to boost tourism from Indonesia once the travelling restrictions are lifted or relaxed. This application will access a machine learning model trained using data from Kaggle (https://www.kaggle.com/shweta2407/singapore-tourism-data). The model is hosted on IBM Watson Machine Learning and accessed thru an API.') ,    
+       	    dccMarkdown('''
+				#### Dash and Markdown
+				Dash supports [Markdown](https://daringfireball.net/projects/markdown/).
+				Markdown is a simple way to write and format text.
+				It includes a syntax for things like **bold text** and *italics*,
+				[links](https://daringfireball.net/projects/markdown/), inline `code` snippets, lists,
+				quotes, and more.
+		''')
+	]),
        dcc.Tab(label='Malaysian Market', children=[
               ]),
 	   dcc.Tab(label='Chinese Market', children=[

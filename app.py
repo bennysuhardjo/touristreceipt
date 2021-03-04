@@ -127,8 +127,10 @@ app.layout = html.Div([
         							value='Packaged',
 								id='travel_type'
     		))]) ,
-		html.Tr([html.Td(' ')]) ,
-                html.Tr([html.Td(id='result')]) 
+		html.Tr([html.Td('    ')]) ,
+                html.Tr([html.Td(id='result')]) ,
+		html.Tr([html.Td('    ')]) ,
+		html.Tr([html.Td(html.Label('This is a sample application that STB Marketing Team would use to develop targeted campaigns to boost tourism from Indonesia once the travelling restrictions are lifted or relaxed. This application will access a machine learning model trained using data from Kaggle (https://www.kaggle.com/shweta2407/singapore-tourism-data). The model is hosted on IBM Watson Machine Learning and accessed thru an API.'))])     
             ])
             
        ]),
